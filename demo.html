@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Slider</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS */
+    #slider {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background: url('https://cdn.prod.website-files.com/5fbc914db82f653793c3875e/62b3e782660e6ae53007b2af_nav-menu-bg-min-p-1600.webp') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: right 0.4s ease-in-out;
+      z-index: 1050;
+    }
+
+    #slider img {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+
+    #slider ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #slider ul li {
+      margin: 15px 0;
+    }
+
+    #slider ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+
+    #slider ul li a:hover {
+      text-decoration: underline;
+    }
+
+    #slider .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    #slider .close-btn:hover {
+      background: red;
+    }
+
+    .navbar-toggler-icon {
+      background-color: black;
+      width: 30px;
+      height: 3px;
+      display: block;
+      position: relative;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: '';
+      background-color: black;
+      width: 30px;
+      height: 3px;
+      display: block;
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    .navbar-toggler-icon::before {
+      top: -8px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 8px;
+    }
+  </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+          <!-- Logo -->
+          <a id="logo" class="navbar-brand" href="#">
+            <img class="img-fluid" src="https://cdn.prod.website-files.com/5fbc914db82f653793c3875e/62b21c5eb75e51726b9a1cb5_savaya-logo.svg" alt="logo">
+          </a>
+      
+          <!-- Toggler Icon: Visible only on small screens -->
+          <button 
+            class="navbar-toggle " 
+            type="button" 
+            onclick="toggleSlider()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">BUY TICKETS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">RESERVE VIP</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+
+  <!-- Slider -->
+  <div id="slider">
+    <button class="close-btn" onclick="toggleSlider()">×</button>
+    <img src="https://masayaclub.netlify.app/images/relogob.png" alt="Slider Logo">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Event Calendar</a></li>
+      <li><a href="#">Reserve VIP</a></li>
+      <li><a href="#">Buy Tickets</a></li>
+    </ul>
+
+    <button 
+    class="navbar-toggle " 
+    type="button" 
+    onclick="toggleSlider()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  </div>
+
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSlider() {
+      const slider = document.getElementById('slider');
+      if (slider.style.right === '0%') {
+        slider.style.right = '-100%';
+      } else {
+        slider.style.right = '0%';
+      }
+    }
+  </script>
+</body>
+</html>

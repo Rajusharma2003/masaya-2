@@ -1,0 +1,170 @@
+:root {
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.3s all ease-in-out;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+body {
+  /* height: 200vh; */
+  font-family: sans-serif;
+}
+/* Navbar */
+#navbar {
+  overflow: hidden;
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  z-index: 99;
+}
+
+/* Style the navbar links */
+#navbar a.nav-link {
+  float: left;
+  /* border-top: 2px solid white; */
+  width: 100%;
+  color: rgb(0, 0, 0);
+  /* background-color: #000; */
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+/* Links on mouse-over */
+#navbar a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Display some links to the right */
+#navbar-right {
+  float: right;
+}
+
+
+/* This is for the caousel section */
+/* Slick */
+.slick-prev{
+    position: absolute;
+    top: 0%;
+    left: 80%;
+    transform: translateY(-150%);
+  }
+  .slick-next, .slick-prev{
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+  }
+  .slick-next:hover, .slick-prev:hover{
+    opacity: 1;
+  }
+  .slick-next{
+    position: absolute;
+    top: 0%;
+    transform: translateY(-150%);
+    right: 0%;
+  }
+/* End caousel section */
+
+
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 992px) {
+  #navbar {
+    /* background-color: #ffffff !important; */
+  /* background-image: url("https://cdn.prod.website-files.com/5fbc914db82f653793c3875e/62b3e782660e6ae53007b2af_nav-menu-bg-min-p-1600.webp"); */
+
+
+  }
+  #navbar #logo {
+    width: 50% !important;
+  }
+  #navbar a.nav-link {
+    border-top: none;
+  }
+}
+
+
+
+/* This is the image section */
+.image-container {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  @media (max-width: 768px) {
+    .image-section {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+/* End image section */
+
+
+/* This is the gallery section */
+   
+/* End gallery section */
+
+
+/* This is the search section */
+/* styles.css */
+.newsletter-section {
+    padding: 2rem 0;
+  }
+  
+  .newsletter-section .text-left p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .newsletter-section .text-left a {
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .newsletter-section .text-left a:hover {
+    color: #0056b3;
+  }
+  
+  form {
+    border: 1px solid #ddd;
+  }
+  
+  form .form-label {
+    font-weight: bold;
+  }
+  
+  form .form-control {
+    max-width: 400px;
+  }
+  
+  form .btn {
+    font-size: 1rem;
+  }
+  
+  
+/* End search section */
